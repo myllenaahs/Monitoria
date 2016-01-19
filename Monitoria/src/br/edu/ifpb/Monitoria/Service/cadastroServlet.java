@@ -19,7 +19,6 @@ import br.edu.ifpb.Monitoria.Entidades.Cliente;
 public class cadastroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	static int aux = 0;
 	GeneralDAO bd = new GeneralDAO();
 	UsuarioDAO user = new UsuarioDAO ();
 	
@@ -31,6 +30,9 @@ public class cadastroServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		GeneralDAO bd = new GeneralDAO();
+		UsuarioDAO user = new UsuarioDAO ();
 
 		Cliente cliente = new Cliente ();
 		String home = new String("index.html");
@@ -43,8 +45,10 @@ public class cadastroServlet extends HttpServlet {
 		cliente.setData(request.getParameter("data"));
 		cliente.setSexo(request.getParameter("genero")); 
 		cliente.setCPF(request.getParameter("cpf"));
-
+		
+		bd.abrirConexao();
 		user.insereUsuario(cliente);
+		bd.fecharConexao();
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("name", cliente.getLogin());
