@@ -8,14 +8,21 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css"  href="estilo_index.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css"  href="style.css" />
+
 <title>Q-MONITOR</title>
 </head>
 <body>
-	
+
+<img src='Ico.jpg' class='iconmajor' id="icone" alt='icone'>
+			<a href="index.html" id="logo">IFPB <em>Campus Campina
+					Grande</em></a>
+</img>
+
 <div class="container">
-		<h2>Faça seu login</h2>
+		<h2>FaÃ§a seu login</h2>
 
 		<form action="LoginServlet" method="post" role="form">
 			<div class="form-group">
@@ -24,19 +31,20 @@
 			<div class="form-group">
 				<label>Senha<input type="password" name="senha"></label>
 			</div>
+			
 			<input type="submit" class="btn btn-primary" value="Enviar">
 		</form>
 	</div>
 	
-	<!-- Botão que redireciona para fazer cadastro -->
+	<!-- BotÃ£o que redireciona para fazer cadastro -->
 
 <div class='container'>
-	<h2>Ainda não é cadastrado?</h2>
+	<h2>Ainda nÃ£o Ã© cadastrado?</h2>
 
 	<form action="cadastroServlet" method="get" role='form'>
 		<input name="" type="button" class="btn btn-success"
 			onclick="location.href='cadastroUsuario.html' "
-			value="Faça seu cadastro">
+			value="FaÃ§a seu cadastro">
 	</form>
 </div>
 </body>
