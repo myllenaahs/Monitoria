@@ -1,51 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.dropotron.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/skel-layers.min.js"></script>
+<script src="js/init.js"></script>
 
-<link rel="stylesheet" type="text/css"  href="style.css" />
+	<link rel="stylesheet" href="css/skel.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style-wide.css" />
 
-<title>Q-MONITOR</title>
+
+<title>Q-Monitor</title>
+
+<!-- Custom styles for this template --> <link href="signin.css" rel="stylesheet">
+
 </head>
+
 <body>
 
-<img src='Ico.jpg' class='iconmajor' id="icone" alt='icone'>
-			<a href="index.html" id="logo">IFPB <em>Campus Campina
-					Grande</em></a>
-</img>
+<div id="header">
 
-<div class="container">
-		<h2>Faça seu login</h2>
+	<h1>
+		<img src='imagens/Ico.jpg' class='icon major' id="icone" alt='icone'>
+		<a href="index.html" id="logo">IFPB <em>Campus Campina Grande</em></a>
+	</h1>
 
-		<form action="LoginServlet" method="post" role="form">
-			<div class="form-group">
-				<label>Nome <input type="text" name="nome"></label>
-			</div>
-			<div class="form-group">
-				<label>Senha<input type="password" name="senha"></label>
-			</div>
-			
-			<input type="submit" class="btn btn-primary" value="Enviar">
-		</form>
-	</div>
-	
-	<!-- Botão que redireciona para fazer cadastro -->
+	</h1>
 
-<div class='container'>
-	<h2>Ainda não é cadastrado?</h2>
+	<nav id="nav">
+		<ul>
+			<li class="current"><a href="index.html">Home</a></li>
+			<li><a href="Login.html">Quadro de Monitores</a></li>
+			<li><a href="#">Horário de Monitores</a></li>
+		</ul>
+	</nav>
 
-	<form action="cadastroServlet" method="get" role='form'>
-		<input name="" type="button" class="btn btn-success"
-			onclick="location.href='cadastroUsuario.html' "
-			value="Faça seu cadastro">
-	</form>
 </div>
+
+	<div class="container">
+
+		<form action="LoginServlet" method="POST" class="form-signin">
+			<h2 class="form-signin-heading">Faça seu login</h2>
+			<label for="inputEmail" class="sr-only"><p>Email</label> <input
+				type="email" id="inputEmail" class="form-control"
+				placeholder="Email address" required autofocus> <label
+				for="inputPassword" class="sr-only"><p>Senha</label> <input
+				type="password" id="inputPassword" class="form-control"
+				placeholder="Password" required>
+			<div class="checkbox">
+				<label> <input type="checkbox" value="remember-me">
+					Lembre-se de mim
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+		</form>
+
+	</div>
+	<!-- /container -->
+
 </body>
 </html>
