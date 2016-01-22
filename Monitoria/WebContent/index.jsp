@@ -1,4 +1,6 @@
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>Q-Monitor</title>
@@ -25,31 +27,27 @@
 
 		<h1>
 			<img src='imagens/Ico.jpg' class='icon major' id="icone" alt='icone'>
-			<a href="index.html" id="logo">IFPB <em>Campus Campina
-					Grande</em></a>
+			<a href="index.html" id="logo">IFPB <em>Campus Campina	Grande</em></a>
 		</h1>
 		<nav id="nav">
 			<ul>
 				<li class="current"><a href="index.html">Home</a></li>
 				<li><a href="#">Quadro de Monitores</a></li>
-				<li><a href="#">HorÃ¡rio de Monitores</a></li>
+				<li><a href="#">Horário de Monitores</a></li>
+			</ul>
+			<ul>
+				<li>Bem-vindo, <%= session.getAttribute("nome") %></li>
 			</ul>
 		</nav>
 
-		<div class='login'>
-			<form action='loginServlet' method='POST'>
-				Login: <input type='text' class='input' name='nome'> 
-				Senha: <input type='password' class='input' name='senha'> 
-				<input type='submit'>
-			</form>
-		</div>
+		
 
 		<!-- Banner -->
 		<section id="banner">
 			<header>
 				<h2>
 					Q-Monitor: <em>Sistema de Gerenciamento de Monitoria para
-						Institutos Federais de EducaÃ§Ã£o, CiÃªncia e Tecnologia da ParaÃ­ba
+						Institutos Federais de Educação, Ciência e Tecnologia da Paraíba
 						(IFPB's).</em>
 				</h2>
 				<a href="#" class="button">Learn More</a>
@@ -65,7 +63,7 @@
 		<!-- Copyright -->
 		<div class="copyright">
 			<ul class="menu">
-				<li>Desenvolvido por: LaÃ­s Lorrany e Myllena Alexandre</a></li>
+				<li>Desenvolvido por: Laís Lorrany e Myllena Alexandre</a></li>
 				<li>Campina Grande 2015</li>
 				<li>&copy; License GPL</li>
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

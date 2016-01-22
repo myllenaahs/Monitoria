@@ -31,4 +31,14 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
+	//Função que compara login e senha do objeto com parâmetros enviados.
+	public boolean validaUsuario(String nome, String senha){
+		
+		if(this.login.equals(nome) && this.senha.equals(senha)){
+			return true;
+		}
+			return false;
+		
+	}
+	
 }

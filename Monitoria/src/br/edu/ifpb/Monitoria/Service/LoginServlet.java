@@ -1,28 +1,25 @@
 package br.edu.ifpb.Monitoria.Service;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Cookie;
-import javax.servlet.RequestDispatcher;
 
-import br.edu.ifpb.Monitoria.DAO.*;
 import br.edu.ifpb.Monitoria.Entidades.Usuario;
 
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-    /**
-     * Default constructor. 
-     */
+	 
+	/*
+	 * */
     public LoginServlet() {
         // TODO Auto-generated constructor stub
     }
@@ -40,18 +37,23 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		GeneralDAO bd = new GeneralDAO(); //criando conexão com a classe geral do BD
-		UsuarioDAO usuario = new UsuarioDAO();
+		/*GeneralDAO bd = new GeneralDAO(); //criando conexão com a classe geral do BD
+		UsuarioDAO usuario = new UsuarioDAO();*/
 		Usuario user = new Usuario();
 		
-		bd.abrirConexao();
+		//bd.abrirConexao();
 		
 		String home = new String("boasVindas.jsp");
 		//Recuperando valores do formulário
 		user.setLogin(request.getParameter("nome"));
 		user.setSenha(request.getParameter("senha"));
+		
+		if (user.validaUsuario("fulano", "123")){
+			System.out.println("1");
+		}
+		
 
-		// Validação do Usuário admin no BD
+		/*// Validação do Usuário admin no BD
 		if (user.getLogin().equals("admin") && user.getSenha().equals("admin")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("nome", user.getLogin());
@@ -66,9 +68,15 @@ public class LoginServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 		}
 		
-		bd.fecharConexao();
+		bd.fecharConexao();*/
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("login", user.getLogin());
+		session.setAttribute("logado", 1);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 
-		doGet(request, response);
+		dispatcher.forward(request, response);
+		
 	}
 
 }

@@ -176,7 +176,7 @@
 		background: #fff;
 		border: solid 1px #e0e0e0;
 		border-radius: 5px;
-		color: inherit;
+		color: #000;
 		display: block;
 		outline: 0;
 		padding: 0.75em;
@@ -725,7 +725,7 @@
 /* Banner */
 
 	#banner {
-		background-image: url("../images/banner.jpg");
+		background-image: url("../imagens/fundo.jpg");
 		background-position: center center;
 		background-size: cover;
 		height: 28em;
