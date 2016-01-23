@@ -725,7 +725,7 @@
 /* Banner */
 
 	#banner {
-		background-image: url("../images/banner.jpg");
+		background-image: url("../imagens/fundo.jpg");
 		background-position: center center;
 		background-size: cover;
 		height: 28em;
@@ -767,6 +767,26 @@
 				vertical-align: middle;
 				margin-left: 1em;
 			}
+			
+			#banner table {		
+				background-color: #000000;
+				color: #ffffff;
+				border-collapse: collapse;
+				border: 1px solid black;
+				opacity: 0.7;
+				width: 500px;
+				text-align: center;
+				border-bottom: 1px solid #ddd;
+				position:relative;
+				left: 425px;
+		bottom: -100px;
+			}
+			
+			#banner table th, td{						
+				text-align: center;
+				border-bottom: 1px solid #ddd;
+			}
+			
 
 /* Wrapper */
 
