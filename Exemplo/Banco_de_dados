@@ -1,0 +1,14 @@
+CREATE DATABASE bd;
+
+USE bd;
+
+CREATE TABLE usuario(
+    id INTEGER NOT NULL,
+    nome varchar(30) NOT NULL,
+    login varchar(20) NOT NULL,
+    senha varchar(20) NOT NULL,
+    constraint pk_usuario PRIMARY KEY (id)
+);
+
+INSERT INTO usuario VALUES (1, 'Myllena Alexandre', 'irlexi', 'mymy1109' );
+INSERT INTO usuario VALUES (2, 'Lais Lorrany', 'lorrany', 'musica' );
