@@ -42,9 +42,7 @@ public class cadastroServlet extends HttpServlet {
 		
 		cliente.setLogin(request.getParameter("name"));
 		cliente.setSenha(request.getParameter("senha"));
-		cliente.setData(request.getParameter("data"));
-		cliente.setSexo(request.getParameter("genero")); 
-		cliente.setCPF(request.getParameter("cpf"));
+		
 		
 		bd.abrirConexao();
 		user.insereUsuario(cliente);

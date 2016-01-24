@@ -4,52 +4,39 @@ public class Cliente {
 
 	String login;
 	String senha;
-	String data;
-	String sexo;
-	String CPF;
+	String nome;
+	String matricula;
+	String horario;
+	String disciplina;
 
 	public Cliente(){
 		this.login="";
 		this.senha="";
-		this.data="";
-		this.sexo="";
-		this.CPF="";
+		this.nome="";
+		this.matricula="";
+		this.horario="";
+		this.disciplina="";
 		}
 
-	public Cliente(String login, String senha, String data, String sexo, String CPF) {
+	public Cliente(String login, String senha,String nome, String matricula, String disciplina, String horario) {
+		this.nome=nome;
 		this.login = login;
 		this.senha = senha;
-		this.data=data;
-		this.sexo=sexo;
-		this.CPF=CPF;
+		this.matricula=matricula;
+		this.disciplina=disciplina;
+		this.horario=horario;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getLogin() {
 		return login;
-	}
-
-	public String getData() {
-		return data;
-	}
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-	public String getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-
-	public String getCPF() {
-		return CPF;
-	}
-
-	public void setCPF(String cPF) {
-		CPF = cPF;
 	}
 
 	public void setLogin(String login) {
@@ -62,6 +49,30 @@ public class Cliente {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getHorario() {
+		return horario;
+	}
+
+	public void setHorario(String horario) {
+		this.horario = horario;
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+	public String getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(String disciplina) {
+		this.disciplina = disciplina;
 	}
 
 }

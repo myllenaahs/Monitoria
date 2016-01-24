@@ -65,13 +65,11 @@ public class UsuarioDAO {
 
 			String sql = "INSERT INTO usuario (CPF, nome, senha, data_nasc, genero) "
 					+ "VALUES ('"
-					+ cliente.getCPF()
+					+ cliente.getMatricula()
 					+ "','"
 					+ cliente.getLogin()
 					+ "','"
-					+ cliente.getSenha()
-					+ "','"
-					+ cliente.getData() + "','" + cliente.getSexo() + "')";
+					+ cliente.getSenha()+"')";
 
 			st.executeUpdate(sql);
 			st.close();
@@ -84,5 +82,38 @@ public class UsuarioDAO {
 			npe.printStackTrace(System.err);
 		}
 
+	}
+	
+	public void procurarUsuario (String monitor){
+		
+		bd.abrirConexao();
+
+
+		String sql = "SELECT c.nome, c.horario " + "FROM CLIENTE c " + "WHERE c.disciplina='"
+				+ monitor + "'";
+
+		try {
+			Statement st = GeneralDAO.connection.createStatement();
+			rs = st.executeQuery(sql);
+
+			while (rs.next()) {
+				if (rs == null) {
+					aux = 0;
+				} else {
+					aux = 1;
+				}
+			}
+			st.close();
+
+		} catch (SQLException sqle) {
+			System.out.println("Nao foi possivel realizar consulta");
+			sqle.printStackTrace(System.err);
+		} catch (NullPointerException npe){
+			System.out.println("Nao foi possivel realizar inserção");
+			npe.printStackTrace(System.err);
+		}
+
+		bd.fecharConexao();
+		
 	}
 }
