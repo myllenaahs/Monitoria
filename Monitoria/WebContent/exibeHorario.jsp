@@ -34,6 +34,7 @@
 			<div>Bem-vindo!</div>
 		</h1>
 		<nav id="nav">
+		
 		<ul>
 			<li class="current"><a href="index.html">Home</a></li>
 			<li><form action="quadroServlet" method="post">
