@@ -63,15 +63,18 @@ public class UsuarioDAO {
 			bd.abrirConexao();
 			Statement st = GeneralDAO.connection.createStatement();
 
-			String sql = "INSERT INTO usuario (CPF, nome, senha, data_nasc, genero) "
+			String sql = "INSERT INTO usuario (nome, disciplina, login, senha) "
 					+ "VALUES ('"
-					+ cliente.getMatricula()
+					+ cliente.getNome()
 					+ "','"
+					+ cliente.getDisciplina()
+					+ "','"					
 					+ cliente.getLogin()
 					+ "','"
 					+ cliente.getSenha()+"')";
 
 			st.executeUpdate(sql);
+						
 			st.close();
 			bd.fecharConexao();
 		} catch (SQLException sqle) {

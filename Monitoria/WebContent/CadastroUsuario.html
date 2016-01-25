@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Q-Monitor</title>
@@ -27,39 +27,43 @@
 			<img src='imagens/Ico.jpg' class='icon major' id="icone" alt='icone'>
 			<a href="index.html" id="logo">IFPB <em>Campus Campina
 					Grande</em></a>
+			<div>Bem-vindo!</div>
 		</h1>
 		<nav id="nav">
-			<ul>
-				<li class="current"><a href="index.html">Home</a></li>
-				<li><form action="quadroServlet" method="post"><input type ="submit" value="Quadro de Monitores"></form></li>
-				<li><a href="horario.jsp">Horário de Monitores</a></li>
-				<li><a href="CadastroUsuario.html">Cadastre-se</a></li>
-			</ul>
+		<ul>
+			<li class="current"><a href="index.html">Home</a></li>
+			<li><form action="quadroServlet" method="post">
+					<input type="submit" value="Quadro de Monitores">
+				</form></li>
+			<li><a href="#">Horário de Monitores</a></li>
+		</ul>
 		</nav>
-
-		<div class='login'>
-			<form action='loginServlet' method='POST'>
-				Login: <input type='text' class='input' name='nome'> 
-				Senha: <input type='password' class='input' name='senha'> 
-				<input type='submit'>
-			</form>
-		</div>
 
 		<!-- Banner -->
 		<section id="banner">
-			<header>
-				<h2>
-					Q-Monitor: <em>Sistema de Gerenciamento de Monitoria para
-						Institutos Federais de Educação, Ciência e Tecnologia da Paraíba
-						(IFPB's).</em>
-				</h2>
-				<a href="#" class="button">Learn More</a>
-			</header>
+		
+			<h2>Cadastro de Monitores</h2>
+			<form action="cadastroServlet" method="post">
+				<label>Nome do monitor: 
+					<input type='text' name='nome'></input>
+				</label>
+				<label>Disciplina do monitor: 
+					<input type='text' name='disciplina'></input>
+				</label>				
+				<label>Login do monitor: 
+					<input type='text' name='login'></input>
+				</label>
+				<label>Senha do monitor: 
+					<input type='text' name='senha'></input>
+				</label>
+				<input type="submit">
+			</form>
+			
 		</section>
 
 	</div>
 
-
+	
 	<!-- Footer -->
 	<div id="footer">
 
@@ -74,6 +78,6 @@
 		</div>
 
 	</div>
-
+	
 </body>
 </html>
