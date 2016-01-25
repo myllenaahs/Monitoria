@@ -40,9 +40,7 @@ public class procuraMonitor extends HttpServlet {
 		bd.abrirConexao();
 		
 		String aux = request.getParameter("monitor");
-		
-		System.out.println(aux);
-		
+				
 		String horario = user.procurarUsuario(aux);
 		
 		
