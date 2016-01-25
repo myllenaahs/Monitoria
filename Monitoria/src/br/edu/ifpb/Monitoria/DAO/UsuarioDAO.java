@@ -58,20 +58,37 @@ public class UsuarioDAO {
 
 	public void insereUsuario(Cliente cliente) {
 
-		try {
+	//	try {
 
 			bd.abrirConexao();
-			Statement st = GeneralDAO.connection.createStatement();
+			/*Statement st = GeneralDAO.connection.createStatement();
 
-			String sql = "INSERT INTO usuario (CPF, nome, senha, data_nasc, genero) "
+			String sql = "INSERT INTO usuario (senha)"//, disciplina, login, senha) "
 					+ "VALUES ('"
-					+ cliente.getMatricula()
-					+ "','"
-					+ cliente.getLogin()
-					+ "','"
+					//+ cliente.getNome()
+					//+ "','"
+					//+ cliente.getDisciplina()
+					//+ "','"					
+					//+ cliente.getLogin()
+					//+ "','"
 					+ cliente.getSenha()+"')";
 
-			st.executeUpdate(sql);
+			st.executeUpdate(sql);*/
+			
+			String sql = "SELECT nome " + "FROM usuario " + "WHERE disciplina='Algoritmos'";
+
+			try {
+				Statement st = GeneralDAO.connection.createStatement();
+				rs = st.executeQuery(sql);
+
+				while (rs.next()) {
+					if (rs == null) {
+						aux = 0;
+					} else {
+						System.out.println(rs.toString());
+					}
+				}
+						
 			st.close();
 			bd.fecharConexao();
 		} catch (SQLException sqle) {
