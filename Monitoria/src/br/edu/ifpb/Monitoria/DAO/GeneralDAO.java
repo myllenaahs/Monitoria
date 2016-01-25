@@ -7,7 +7,7 @@ public class GeneralDAO {
 	
 	static String user = "root";
 	static String password = "";
-	static String url = "jdbc:mysql://localhost:3306/biblioteca";
+	static String url = "jdbc:mysql://localhost:3306/monitoria";
 	static Connection connection;
 	static ResultSet rs;
 

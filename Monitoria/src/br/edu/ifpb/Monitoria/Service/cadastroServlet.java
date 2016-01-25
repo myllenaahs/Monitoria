@@ -40,7 +40,7 @@ public class cadastroServlet extends HttpServlet {
 		
 		//Recuperando valores do formulario de cadastro
 		
-		cliente.setLogin(request.getParameter("name"));
+		cliente.setNome(request.getParameter("nome"));
 		cliente.setDisciplina(request.getParameter("disciplina"));
 		cliente.setLogin(request.getParameter("login"));
 		cliente.setSenha(request.getParameter("senha"));
