@@ -101,7 +101,9 @@ public class UsuarioDAO {
 
 	}
 	
-	public void procurarUsuario (String monitor){
+	public String procurarUsuario (String monitor){
+		
+		String horario="";
 		
 		bd.abrirConexao();
 
@@ -115,9 +117,9 @@ public class UsuarioDAO {
 
 			while (rs.next()) {
 				if (rs == null) {
-					aux = 0;
+					horario="Sem horário";
 				} else {
-					aux = 1;
+					horario=rs.getString("horario");
 				}
 			}
 			st.close();
@@ -131,6 +133,8 @@ public class UsuarioDAO {
 		}
 
 		bd.fecharConexao();
+		
+		return horario;
 		
 	}
 }

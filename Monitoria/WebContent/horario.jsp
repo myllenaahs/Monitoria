@@ -51,6 +51,14 @@
 			<label>Disciplina do monitor: <input type='text'
 				name='monitor'></input></label>
 		</form>
+		
+		<div>
+			<%
+				request.getAttribute("");
+			
+			%>
+		
+		</div>
 		<table>
 			<tr>
 				<th colspan="2">Quadro de Monitores</th>
