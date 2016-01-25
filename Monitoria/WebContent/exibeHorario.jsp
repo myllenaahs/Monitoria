@@ -40,7 +40,7 @@
 			<li><form action="quadroServlet" method="post">
 					<input type="submit" value="Quadro de Monitores">
 				</form></li>
-			<li><a href="#">Horário de Monitores</a></li>
+			<li><a href="horario.jsp">Horário de Monitores</a></li>
 		</ul>
 		</nav>
 
