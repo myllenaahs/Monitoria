@@ -51,36 +51,14 @@
 			<label>Disciplina do monitor: <input type='text'
 				name='monitor'></input></label>
 		</form>
-		
+
 		<div>
 			<%
-				request.getAttribute("");
-			
+				request.getAttribute("horario");
 			%>
-		
-		</div>
-		<table>
-			<tr>
-				<th colspan="2">Quadro de Monitores</th>
-			</tr>
-			<tr>
-				<th>Nome</th>
-				<th>Disciplina</th>
-			</tr>
-			<%
-				ArrayList<ArrayList> quadro = (ArrayList) session.getAttribute("quadro");
-				ArrayList<String> monitores = quadro.get(0);
-				ArrayList<String> disciplinas = quadro.get(1);
 
-				for (int i = 0; i < monitores.size(); i++) {
-			%><tr>
-				<td><%=monitores.get(i)%></td>
-				<td><%=disciplinas.get(i)%></td>
-			</tr>
-			<%
-				}
-			%>
-		</table>
+		</div>
+
 		<header>
 		<h2>
 			Q-Monitor: <em>Sistema de Gerenciamento de Monitoria para
@@ -90,7 +68,7 @@
 		<a href="#" class="button">Learn More</a> </header> </section>
 
 	</div>
-	
+
 	<!-- Footer -->
 	<div id="footer">
 

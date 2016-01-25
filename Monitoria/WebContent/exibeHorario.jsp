@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import = "java.util.ArrayList" %>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,9 +15,9 @@
 <script src="js/skel-layers.min.js"></script>
 <script src="js/init.js"></script>
 
-	<link rel="stylesheet" href="css/skel.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/style-wide.css" />
+<link rel="stylesheet" href="css/skel.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style-wide.css" />
 
 </head>
 <body>
@@ -39,46 +39,44 @@
 			<li><form action="quadroServlet" method="post">
 					<input type="submit" value="Quadro de Monitores">
 				</form></li>
-			<li><a href="horario.jsp">Horário de Monitores</a></li>
+			<li><a href="#">Horário de Monitores</a></li>
 		</ul>
 		</nav>
 
 		<!-- Banner -->
 		<section id="banner">
-			<table>
-				<tr>
-					<th colspan="2">Quadro de Monitores</th>
-				</tr>
-				<tr>
-					<th>Nome</th>
-					<th>Disciplina</th>
-				</tr>
-				<%
-					ArrayList<ArrayList> quadro = (ArrayList) session
-							.getAttribute("quadro");
-					ArrayList<String> monitores = quadro.get(0);
-					ArrayList<String> disciplinas = quadro.get(1);
-	
-					for (int i = 0; i < monitores.size(); i++) {
-				%><tr>
-					<td><%=monitores.get(i)%></td>
-					<td><%=disciplinas.get(i)%></td>
-				</tr>
-				<%
-					}
-				%>
-			</table>
-			<header>
-				<h2>
-					Q-Monitor: <em>Sistema de Gerenciamento de Monitoria para
-						Institutos Federais de Educação, Ciência e Tecnologia da Paraíba
-						(IFPB's).</em>
-				</h2>
-				<a href="#" class="button">Learn More</a>
-			</header>
-		</section>
+
+
+		<form action="procuraMonitor" method="get">
+			<label>Disciplina do monitor: <input type='text'
+				name='monitor'></input></label>
+		</form>
+
+		<div>
+
+			O monitor
+			<%
+			request.getAttribute("moitr");
+		%>
+			encontra-se na instituição nos horários
+			<%
+			request.getAttribute("horario");
+		%>
+
+
+
+		</div>
+
+		<header>
+		<h2>
+			Q-Monitor: <em>Sistema de Gerenciamento de Monitoria para
+				Institutos Federais de Educação, Ciência e Tecnologia da Paraíba
+				(IFPB's).</em>
+		</h2>
+		<a href="#" class="button">Learn More</a> </header> </section>
 
 	</div>
+
 	<!-- Footer -->
 	<div id="footer">
 
@@ -93,6 +91,6 @@
 		</div>
 
 	</div>
-	
+
 </body>
 </html>
