@@ -40,48 +40,27 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		GeneralDAO bd = new GeneralDAO(); //criando conexão com a classe geral do BD
 		UsuarioDAO usuario = new UsuarioDAO();
 		Usuario user = new Usuario();
 		String home = null;
 		
-		user.setLogin(request.getParameter("nome"));
-		user.setSenha(request.getParameter("senha"));
-		
-		if (user.getLogin().equals("fulano") && user.getSenha().equals("123")) {
-			home = new String("index.jsp");
-		}
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("nome", user.getLogin());
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-		dispatcher.forward(request, response);
-		
-		/*bd.abrirConexao();
-		
-		String home = new String("boasVindas.jsp");
+		//home = new String("boasVindas.jsp");
 		//Recuperando valores do formulário
 		user.setLogin(request.getParameter("nome"));
 		user.setSenha(request.getParameter("senha"));
 
 		// Validação do Usuário admin no BD
-		if (user.getLogin().equals("admin") && user.getSenha().equals("admin")) {
+		
+		if(usuario.consultaUser(user)){
 			HttpSession session = request.getSession();
 			session.setAttribute("nome", user.getLogin());
 			RequestDispatcher dispatcher = request
-					.getRequestDispatcher("adminResources.html");
+					.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
-		} else //validação dos usuários gerais
-			if (usuario.consultaUser(user) == true) {
-			HttpSession session = request.getSession();
-			session.setAttribute("nome", user.getLogin());
-			RequestDispatcher dispatcher = request.getRequestDispatcher(home);
-			dispatcher.forward(request, response);
+		} else {
+			response.sendRedirect("index.html");
 		}
-		
-		bd.fecharConexao();
-
-		doGet(request, response);*/
+				
 		
 	}
 

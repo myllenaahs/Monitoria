@@ -168,7 +168,7 @@
 		background: #fff;
 		border: solid 1px #e0e0e0;
 		border-radius: 5px;
-		color: inherit;
+		color: #000;
 		display: block;
 		outline: 0;
 		padding: 0.75em;
@@ -771,14 +771,13 @@
 				border-bottom: 1px solid #ddd;
 				position:relative;
 				left: 425px;
-		bottom: -100px;
+				bottom: -100px;
 			}
 			
 			#banner table th, td{						
 				text-align: center;
 				border-bottom: 1px solid #ddd;
-			}
-			
+			}			
 
 /* Wrapper */
 

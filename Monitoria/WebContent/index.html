@@ -31,14 +31,17 @@
 		<nav id="nav">
 			<ul>
 				<li class="current"><a href="index.html">Home</a></li>
-				<li><form action="quadroServlet" method="post"><input type ="submit" value="Quadro de Monitores"></form></li>
+				<li>
+					<form action="quadroServlet" method="post">
+					<input type ="submit" value="Quadro de Monitores"></form>
+				</li>
 				<li><a href="horario.jsp">Horário de Monitores</a></li>
 				<li><a href="CadastroUsuario.html">Cadastre-se</a></li>
 			</ul>
 		</nav>
 
 		<div class='login'>
-			<form action='loginServlet' method='POST'>
+			<form action='loginServlet' method='post'>
 				Login: <input type='text' class='input' name='nome'> 
 				Senha: <input type='password' class='input' name='senha'> 
 				<input type='submit'>

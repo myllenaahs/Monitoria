@@ -22,7 +22,7 @@ public class UsuarioDAO {
 		System.out.print("Consulta SQL" + user.getLogin() + " "
 				+ user.getSenha());
 
-		String sql = "SELECT u.nome " + "FROM USUARIO u " + "WHERE u.nome='"
+		String sql = "SELECT u.nome " + "FROM usuario u " + "WHERE u.login='"
 				+ user.getLogin() + "'" + "AND u.senha='" + user.getSenha()
 				+ "'";
 
