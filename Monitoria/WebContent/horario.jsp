@@ -47,9 +47,10 @@
 		<section id="banner">
 
 
-		<form action="procuraMonitor" method="get">
+		<form action="procuraMonitor" method="get" >
 			<label>Disciplina do monitor: <input type='text'
 				name='monitor'></input></label>
+				<input type="submit" value="Procurar">
 		</form>
 
 		<div>

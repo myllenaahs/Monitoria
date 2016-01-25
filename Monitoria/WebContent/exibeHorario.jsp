@@ -51,7 +51,7 @@
 		<form action="procuraMonitor" method="get">
 			<label>Disciplina do monitor: <input type='text'
 				name='monitor'></input></label>
-		</form>
+			<input type="submit" value="Procurar">
 
 		<div>
 
