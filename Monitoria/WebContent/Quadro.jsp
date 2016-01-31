@@ -54,15 +54,12 @@
 					<th>Disciplina</th>
 				</tr>
 				<%
-					ArrayList<ArrayList> quadro = (ArrayList) session
+					ArrayList<String> quadro = (ArrayList) session
 							.getAttribute("quadro");
-					ArrayList<String> monitores = quadro.get(0);
-					ArrayList<String> disciplinas = quadro.get(1);
 	
-					for (int i = 0; i < monitores.size(); i++) {
+					for (int i = 0; i < quadro.size(); i++) {
 				%><tr>
-					<td><%=monitores.get(i)%></td>
-					<td><%=disciplinas.get(i)%></td>
+					<td><%=quadro.get(i)%></td>
 				</tr>
 				<%
 					}

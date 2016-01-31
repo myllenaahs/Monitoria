@@ -1,7 +1,6 @@
 package br.edu.ifpb.Monitoria.Service;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import br.edu.ifpb.Monitoria.DAO.UsuarioDAO;
+import br.edu.ifpb.Monitoria.Entidades.Cliente;
 
 /**
  * Servlet implementation class QuadroServlet
@@ -27,39 +29,16 @@ public class QuadroServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		/*
 		 * Consulta do bd aqui
 		 * */
-
-		System.out.println("here");
+		UsuarioDAO usuario = new UsuarioDAO();
+		ArrayList<String> quadro = new ArrayList<String>();
 		
-		ArrayList <String> monitores = new ArrayList<String>();
-		ArrayList <String> disciplinas = new ArrayList<String>();		
-		ArrayList<ArrayList> quadro = new ArrayList<ArrayList>();
-		
-		monitores.add("Laís");
-		monitores.add("Myllena");
-		
-		disciplinas.add("Algoritmos");
-		disciplinas.add("Matemática");
-		
-		System.out.println("here");
-		
-		quadro.add(monitores);
-		quadro.add(disciplinas);
+		quadro = usuario.nomeMonitores();
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("quadro", quadro);

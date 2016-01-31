@@ -1,8 +1,12 @@
 package br.edu.ifpb.Monitoria.DAO;
 
-import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-import br.edu.ifpb.Monitoria.Entidades.*;
+import br.edu.ifpb.Monitoria.Entidades.Cliente;
+import br.edu.ifpb.Monitoria.Entidades.Usuario;
 
 public class UsuarioDAO {
 
@@ -122,5 +126,44 @@ public class UsuarioDAO {
 		
 		return horario;
 		
+	}
+	
+	public ArrayList<String> nomeMonitores(){
+		
+		ResultSet rs1;
+		ArrayList<String> monitores = new ArrayList<String>();
+		int i = 1;
+		bd.abrirConexao();
+
+		String sql = "SELECT u.nome FROM usuario u";
+
+		try {
+			Statement st = GeneralDAO.connection.createStatement();
+			rs1 = st.executeQuery(sql);
+			while (rs1.next()) {
+				System.out.println(rs1.getString(i) + " " + i);
+				monitores.add(rs1.getString(i));
+				i++;
+			}
+			st.close();
+
+		} catch (SQLException sqle) {
+			System.out.println("Nao foi possivel realizar consulta");
+			sqle.printStackTrace(System.err);
+		} catch (NullPointerException npe){
+			System.out.println("Nao foi possivel realizar inserção");
+			npe.printStackTrace(System.err);
+		}
+
+		bd.fecharConexao();
+		
+		return monitores;
+	}
+	
+	public ArrayList<Cliente> quadroMonitores(){
+		
+		
+		
+		return null;
 	}
 }
