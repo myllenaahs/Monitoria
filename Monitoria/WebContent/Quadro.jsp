@@ -51,7 +51,6 @@
 				</tr>
 				<tr>
 					<th>Nome</th>
-					<th>Disciplina</th>
 				</tr>
 				<%
 					ArrayList<String> quadro = (ArrayList) session

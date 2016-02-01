@@ -524,7 +524,7 @@ input[type="submit"].small, input[type="reset"].small, input[type="button"].smal
 /*div login*/
 div.login {
 	color: black;
-	margin-left: 545px;
+	margin-left: 860px;
 	margin-top: 50px;
 	position: absolute;
 	z-index: 1;
@@ -901,8 +901,9 @@ input.input {
 
 div.formulario {
 	color: black;
-	margin-left: 540px;
+	margin-left: 860px;
 	margin-top: -50px;
 	position: absolute;
 	z-index: 1;
 }
+

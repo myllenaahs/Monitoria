@@ -36,7 +36,7 @@
 		<nav id="nav">
 		<ul>
 			<li class="current"><a href="index.html">Home</a></li>
-			<li><form action="quadroServlet" method="post">
+			<li><form action="quadroServlet">
 					<input type="submit" value="Quadro de Monitores">
 				</form></li>
 			<li><a href="horario.jsp">Horário de Monitores</a></li>
