@@ -34,7 +34,7 @@
 			<div>Bem-vindo!</div>
 		</h1>
 		<nav id="nav">
-		
+
 		<ul>
 			<li class="current"><a href="index.html">Home</a></li>
 			<li><form action="quadroServlet" method="post">
@@ -47,11 +47,12 @@
 		<!-- Banner -->
 		<section id="banner">
 
-
-		<form action="procuraMonitor" method="get">
-			<label>Disciplina do monitor: <input type='text'
-				name='monitor'></input></label>
-			<input type="submit" value="Procurar">
+		<div class='login'>
+			<form action="procuraMonitor" method="get">
+				<label>Disciplina do monitor: <input type='text'
+					name='monitor'></input></label> <input type="submit" value="Procurar">
+			</form>
+		</div>
 
 		<div>
 

@@ -46,14 +46,14 @@
 		<!-- Banner -->
 		<section id="banner">
 
-
+	<div class='login'>
 		<form action="procuraMonitor" method="get" >
 		
 			<label>Disciplina do monitor: <input type='text'
 				name='monitor'></input></label>
 				<input type="submit" value="Procurar">
 		</form>
-
+	</div>
 		<header>
 		<h2>
 			Q-Monitor: <em>Sistema de Gerenciamento de Monitoria para

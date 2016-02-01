@@ -47,7 +47,7 @@ public class procuraMonitor extends HttpServlet {
 		request.setAttribute("horario", horario);
 		request.setAttribute("monitr", aux);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("horario.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("exibeHorario.jsp");
 		
 		dispatcher.forward(request, response);
 		
